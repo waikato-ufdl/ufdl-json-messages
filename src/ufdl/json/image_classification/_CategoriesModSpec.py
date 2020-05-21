@@ -1,7 +1,7 @@
 from typing import List
 
 from wai.json.object import StrictJSONObject
-from wai.json.object.property import ArrayProperty, StringProperty
+from wai.json.object.property import ArrayProperty, StringProperty, EnumProperty
 
 
 class CategoriesModSpec(StrictJSONObject['CategoriesModSpec']):
@@ -9,6 +9,11 @@ class CategoriesModSpec(StrictJSONObject['CategoriesModSpec']):
     A specification of which images to modify the categories
     for, and which categories to modify for those images.
     """
+    # The method to use to modify the categories
+    method: str = EnumProperty(
+        values=("add", "remove")
+    )
+
     # The images to modify the categories for
     images: List[str] = ArrayProperty(
         element_property=StringProperty(min_length=1),
