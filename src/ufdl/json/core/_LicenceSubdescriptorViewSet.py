@@ -15,7 +15,7 @@ class LicenceSubdescriptorModSpec(StrictJSONObject['LicenceSubdescriptorModSpec'
     method: str = EnumProperty(values=("add", "remove"))
 
     # The name of the sub-descriptor
-    name: List[Union[str, int]] = ArrayProperty(
+    names: List[Union[str, int]] = ArrayProperty(
         element_property=OneOfProperty(
             sub_properties=(
                 StringProperty(min_length=1),
