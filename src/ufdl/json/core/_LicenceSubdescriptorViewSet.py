@@ -18,7 +18,7 @@ class LicenceSubdescriptorModSpec(StrictJSONObject['LicenceSubdescriptorModSpec'
     names: List[Union[str, int]] = ArrayProperty(
         element_property=OneOfProperty(
             sub_properties=(
-                StringProperty(min_length=1),
+                StringProperty(min_length=1, max_length=100),
                 NumberProperty(minimum=1, integer_only=True)
             )),
         min_elements=1,
