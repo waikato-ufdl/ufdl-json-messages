@@ -9,7 +9,7 @@ class LicenceSubdescriptorModSpec(StrictJSONObject['LicenceSubdescriptorModSpec'
     Message to modify the sub-descriptors of a licence.
     """
     # The type of sub-descriptor to modify
-    type: str = EnumProperty(values=("permission", "condition", "limitation"))
+    type: str = EnumProperty(values=("permissions", "conditions", "limitations"))
 
     # The type of modification to make
     method: str = EnumProperty(values=("add", "remove"))
