@@ -1,1 +1,2 @@
+from ._LicenceSubdescriptorViewSet import LicenceSubdescriptorModSpec
 from ._MembershipModSpec import MembershipModSpec
