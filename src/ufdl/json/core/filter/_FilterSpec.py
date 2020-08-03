@@ -1,7 +1,7 @@
 from typing import List
 
 from wai.json.object import StrictJSONObject
-from wai.json.object.property import ArrayProperty, OneOfProperty
+from wai.json.object.property import ArrayProperty, OneOfProperty, BoolProperty
 
 from .field import *
 from .logical import *
@@ -30,4 +30,10 @@ class FilterSpec(StrictJSONObject['FilterSpec']):
     order_by: List[OrderBy] = ArrayProperty(
         element_property=OrderBy.as_property(),
         optional=True
+    )
+
+    # An optional flag to include soft-deleted models as well
+    include_inactive: bool = BoolProperty(
+        optional=True,
+        default=False
     )
