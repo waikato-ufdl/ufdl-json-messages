@@ -1,12 +1,10 @@
-# setup.py
-# Copyright (C) 2020 Fracpete (fracpete at waikato dot ac dot nz)
 from setuptools import setup, find_namespace_packages
 
 
 setup(
-    name="ufdl-json-messages",
+    name="ufdl.json-messages",
     description="Definitions of JSON messages used by UFDL",
-    url="https://github.com/waikato-ufdl/ufdl-backend",
+    url="https://github.com/waikato-ufdl/ufdl-json-messages",
     classifiers=[
         'Development Status :: 4 - Beta',
         'License :: OSI Approved :: Apache Software License',
