@@ -8,7 +8,7 @@ class InputSpec(StrictJSONObject['InputSpec']):
     and options to an input to a job template.
     """
     # The type of the input
-    type: str = StringProperty(max_length=32)
+    type: str = StringProperty(min_length=1, max_length=32)
 
     # The options to the input
     options: str = StringProperty()

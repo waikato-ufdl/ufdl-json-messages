@@ -8,7 +8,7 @@ class ParameterSpec(StrictJSONObject['ParameterSpec']):
     and default value to a parameter to a job template.
     """
     # The type of the input
-    type: str = StringProperty(max_length=32)
+    type: str = StringProperty(min_length=1, max_length=32)
 
     # The options to the input
     default: str = StringProperty()
