@@ -7,8 +7,11 @@ class ParameterSpec(StrictJSONObject['ParameterSpec']):
     Specifies the JSON data structure for specifying the type
     and default value to a parameter to a job template.
     """
-    # The type of the input
+    # The type of the parameter
     type: str = StringProperty(min_length=1, max_length=32)
 
-    # The options to the input
+    # The options to the parameter
     default: str = StringProperty()
+
+    # The help text for the parameter
+    help: str = StringProperty(optional=True)

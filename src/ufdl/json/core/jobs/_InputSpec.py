@@ -12,3 +12,6 @@ class InputSpec(StrictJSONObject['InputSpec']):
 
     # The options to the input
     options: str = StringProperty()
+
+    # The help text for the input
+    help: str = StringProperty(optional=True)
