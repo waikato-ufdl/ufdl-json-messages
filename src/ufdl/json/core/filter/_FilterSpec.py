@@ -19,6 +19,7 @@ class FilterSpec(StrictJSONObject['FilterSpec']):
             sub_properties=(
                 Contains.as_property(),
                 Exact.as_property(),
+                IsNull.as_property(),
                 And.as_property(),
                 Or.as_property()
             )

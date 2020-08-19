@@ -5,3 +5,4 @@ of a model.
 from ._Contains import Contains
 from ._Exact import Exact
 from ._FieldFilterExpression import FieldFilterExpression
+from ._IsNull import IsNull

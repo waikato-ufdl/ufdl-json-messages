@@ -1,4 +1,4 @@
-from typing import List, Union
+from typing import List
 
 from wai.json.object.property import ArrayProperty, OneOfProperty, ConstantProperty
 
@@ -19,7 +19,8 @@ class And(FilterExpression['And']):
         element_property=OneOfProperty(
             sub_properties=(
                 Contains.as_property(),
-                Exact.as_property()
+                Exact.as_property(),
+                IsNull.as_property()
             )
         ),
         min_elements=2

@@ -21,7 +21,8 @@ class Or(FilterExpression['Or']):
             sub_properties=(
                 And.as_property(),
                 Contains.as_property(),
-                Exact.as_property()
+                Exact.as_property(),
+                IsNull.as_property()
             )
         ),
         min_elements=2
