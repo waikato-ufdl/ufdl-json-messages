@@ -17,11 +17,10 @@ class FilterSpec(StrictJSONObject['FilterSpec']):
     expressions: List[FilterExpression] = ArrayProperty(
         element_property=OneOfProperty(
             sub_properties=(
-                Contains.as_property(),
-                Exact.as_property(),
-                IsNull.as_property(),
                 And.as_property(),
-                Or.as_property()
+                Or.as_property(),
+                *(field_filter_expression.as_property()
+                  for field_filter_expression in ALL_FIELD_FILTER_EXPRESSIONS)
             )
         ),
         optional=True

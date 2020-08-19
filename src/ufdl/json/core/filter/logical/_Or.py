@@ -20,9 +20,8 @@ class Or(FilterExpression['Or']):
         element_property=OneOfProperty(
             sub_properties=(
                 And.as_property(),
-                Contains.as_property(),
-                Exact.as_property(),
-                IsNull.as_property()
+                *(field_filter_expression.as_property()
+                  for field_filter_expression in ALL_FIELD_FILTER_EXPRESSIONS)
             )
         ),
         min_elements=2

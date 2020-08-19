@@ -17,11 +17,8 @@ class And(FilterExpression['And']):
     # The sub-expressions of the logical and
     sub_expressions: List[FieldFilterExpression] = ArrayProperty(
         element_property=OneOfProperty(
-            sub_properties=(
-                Contains.as_property(),
-                Exact.as_property(),
-                IsNull.as_property()
-            )
+            sub_properties=(field_filter_expression.as_property()
+                            for field_filter_expression in ALL_FIELD_FILTER_EXPRESSIONS)
         ),
         min_elements=2
     )
