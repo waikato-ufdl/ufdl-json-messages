@@ -19,7 +19,7 @@ class Exact(FieldFilterExpression['Exact']):
     # Keyword identifying this object as an 'exact' expression
     type: str = ConstantProperty(value="exact")
 
-    # The sub-string to filter for
+    # The value to match exactly
     value: Union[str, int, float, bool] = OneOfProperty(
         sub_properties=(
             StringProperty(),
