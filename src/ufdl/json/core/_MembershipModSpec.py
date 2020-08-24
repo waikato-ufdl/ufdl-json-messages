@@ -14,4 +14,4 @@ class MembershipModSpec(StrictJSONObject['MembershipModSpec']):
 
     # The permissions to give the member (only required for 'add' and 'update',
     # defaults to read-only permission if not specified).
-    permissions: str = EnumProperty(values=("R", "W", "A"), optional=True, default="R")
+    permissions: str = EnumProperty(values=("R", "X", "W", "A"), optional=True, default="R")
