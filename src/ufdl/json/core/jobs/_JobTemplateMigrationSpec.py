@@ -30,6 +30,7 @@ class JobTemplateMigrationSpec(JSONObject['JobTemplateMigrationSpec']):
     job templates to the Django migration system.
     """
     name: str = StringProperty(min_length=1, max_length=64)
+    description: str = StringProperty(optional=True, default="")
     scope: str = StringProperty(min_length=1, max_length=16)
     framework: str = StringProperty(min_length=3, max_length=49)
     domain: str = StringProperty(min_length=2, max_length=2)

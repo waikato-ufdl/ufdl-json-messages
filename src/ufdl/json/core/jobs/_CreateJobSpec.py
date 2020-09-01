@@ -1,7 +1,7 @@
 from typing import Union
 
 from wai.json.object import StrictJSONObject
-from wai.json.object.property import NumberProperty, OneOfProperty
+from wai.json.object.property import NumberProperty, OneOfProperty, StringProperty
 
 from ._DockerImageSpec import DockerImageSpec
 from ._Values import Values
@@ -25,3 +25,6 @@ class CreateJobSpec(StrictJSONObject['CreateJobSpec']):
 
     # The values of the parameters
     parameter_values: Values = Values.as_property(optional=True)
+
+    # A description of the job
+    description: str = StringProperty(optional=True, default="")
