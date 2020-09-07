@@ -8,3 +8,6 @@ class MergeSpec(StrictJSONObject['MergeSpec']):
     """
     # Whether to delete the source object after merging
     delete: bool = BoolProperty()
+
+    # Whether to hard-delete
+    hard: bool = BoolProperty(optional=True, default=False)
