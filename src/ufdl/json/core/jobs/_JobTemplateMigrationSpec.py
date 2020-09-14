@@ -1,7 +1,7 @@
 from typing import List
 
 from wai.json.object import JSONObject
-from wai.json.object.property import StringProperty, ArrayProperty
+from wai.json.object.property import StringProperty, ArrayProperty, NumberProperty
 
 
 class InputMigrationSpec(JSONObject['InputMigrationSpec']):
@@ -30,6 +30,7 @@ class JobTemplateMigrationSpec(JSONObject['JobTemplateMigrationSpec']):
     job templates to the Django migration system.
     """
     name: str = StringProperty(min_length=1, max_length=64)
+    version: int = NumberProperty(minimum=1, integer_only=True, optional=True)
     description: str = StringProperty(optional=True, default="")
     scope: str = StringProperty(min_length=1, max_length=16)
     framework: str = StringProperty(min_length=3, max_length=49)
