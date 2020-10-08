@@ -8,7 +8,7 @@ class PretrainedModelMigrationSpec(JSONObject['PretrainedModelMigrationSpec']):
     the migration of the database.
     """
     name = StringProperty(min_length=1, max_length=200)
-    description = StringProperty(max_length=200)
+    description = StringProperty()
     url = StringProperty(min_length=1, max_length=200)
     licence = StringProperty(min_length=1, max_length=100)
     framework = StringProperty(min_length=3, max_length=49)
