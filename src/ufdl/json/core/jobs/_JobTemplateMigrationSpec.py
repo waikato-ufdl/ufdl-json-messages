@@ -29,7 +29,7 @@ class JobTemplateMigrationSpec(JSONObject['JobTemplateMigrationSpec']):
     Specification of the JSON format used to describe pre-defined
     job templates to the Django migration system.
     """
-    name: str = StringProperty(min_length=1, max_length=64)
+    name: str = StringProperty(min_length=1, max_length=200)
     version: int = NumberProperty(minimum=1, integer_only=True, optional=True)
     description: str = StringProperty(optional=True, default="")
     scope: str = StringProperty(min_length=1, max_length=16)
