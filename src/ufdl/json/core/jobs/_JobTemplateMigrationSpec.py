@@ -1,7 +1,7 @@
 from typing import List
 
 from wai.json.object import JSONObject
-from wai.json.object.property import StringProperty, ArrayProperty, NumberProperty
+from wai.json.object.property import StringProperty, ArrayProperty, NumberProperty, BoolProperty
 
 
 class InputMigrationSpec(JSONObject['InputMigrationSpec']):
@@ -12,6 +12,7 @@ class InputMigrationSpec(JSONObject['InputMigrationSpec']):
     type: str = StringProperty(min_length=1, max_length=32)
     options: str = StringProperty(optional=True, default="")
     help: str = StringProperty(optional=True, default="")
+    forward: bool = BoolProperty(optional=True, default=False)
 
 
 class ParameterMigrationSpec(JSONObject['ParameterMigrationSpec']):
@@ -39,6 +40,7 @@ class JobTemplateMigrationSpec(JSONObject['JobTemplateMigrationSpec']):
     executor_class: str = StringProperty(min_length=1, max_length=128)
     required_packages: str = StringProperty()
     body: str = StringProperty(min_length=1)
+    is_pipeline: bool = BoolProperty()
     licence: str = StringProperty(min_length=1, max_length=100)
     inputs: List[InputMigrationSpec] = ArrayProperty(element_property=InputMigrationSpec.as_property())
     parameters: List[ParameterMigrationSpec] = ArrayProperty(element_property=ParameterMigrationSpec.as_property())
