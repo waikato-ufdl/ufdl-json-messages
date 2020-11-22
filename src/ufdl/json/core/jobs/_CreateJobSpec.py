@@ -9,8 +9,8 @@ from ._Values import Values
 
 class CreateJobSpec(StrictJSONObject['CreateJobSpec']):
     """
-    Specifies the JSON data structure for specifying the type
-    of a job output.
+    Specifies the JSON data structure for specifying the arguments
+    to execute a job-template with.
     """
     # The Docker image to run the job (by pk or name/version)
     docker_image: Union[int, DockerImageSpec] = OneOfProperty(
