@@ -1,5 +1,5 @@
 from wai.json.object import StrictJSONObject
-from wai.json.object.property import StringProperty
+from wai.json.object.property import StringProperty, BoolProperty
 
 
 class InputSpec(StrictJSONObject['InputSpec']):
@@ -15,3 +15,6 @@ class InputSpec(StrictJSONObject['InputSpec']):
 
     # The help text for the input
     help: str = StringProperty(optional=True)
+
+    # Whether the input should be forwarded in a pipeline
+    forward: bool = BoolProperty(optional=True, default=False)
