@@ -1,6 +1,6 @@
 from typing import List, Union
 
-from wai.json.object import JSONObject
+from wai.json.object import StrictJSONObject
 from wai.json.object.property import ArrayProperty, OneOfProperty
 
 from ._EmailNotification import EmailNotification
@@ -35,7 +35,7 @@ def _create_notification_array_property() -> ArrayProperty:
     )
 
 
-class NotificationActions(JSONObject['NotificationActions']):
+class NotificationActions(StrictJSONObject['NotificationActions']):
     """
     Specification of the notifications that a job should send at various
     stages in its lifecycle.
