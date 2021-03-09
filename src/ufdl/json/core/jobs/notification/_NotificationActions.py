@@ -51,6 +51,9 @@ class NotificationActions(StrictJSONObject['NotificationActions']):
     # The notifications to send when a job is started
     on_start: List[NotificationUnionType] = _create_notification_array_property()
 
+    # The notifications to send when a job is progressed
+    on_progress: List[NotificationUnionType] = _create_notification_array_property()
+
     # The notifications to send when a job is finished
     on_finish: List[NotificationUnionType] = _create_notification_array_property()
 
