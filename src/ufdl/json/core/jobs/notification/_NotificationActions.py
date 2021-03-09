@@ -5,15 +5,17 @@ from wai.json.object.property import ArrayProperty, OneOfProperty
 
 from ._EmailNotification import EmailNotification
 from ._PrintNotification import PrintNotification
+from ._WebSocketNotification import WebSocketNotification
 
 # The different types of notification that UFDL supports
 NotificationTypes = (
     EmailNotification,
-    PrintNotification
+    PrintNotification,
+    WebSocketNotification
 )
 
 # The union of the types of notification UFDL supports
-NotificationUnionType = Union[EmailNotification, PrintNotification]
+NotificationUnionType = Union[EmailNotification, PrintNotification, WebSocketNotification]
 
 
 def _create_notification_array_property() -> ArrayProperty:
