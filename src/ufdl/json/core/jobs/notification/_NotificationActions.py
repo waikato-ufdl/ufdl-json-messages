@@ -65,3 +65,6 @@ class NotificationActions(StrictJSONObject['NotificationActions']):
 
     # The notifications to send when a job is aborted
     on_abort: List[NotificationUnionType] = _create_notification_array_property()
+
+    # The notifications to send when a job is cancelled
+    on_cancel: List[NotificationUnionType] = _create_notification_array_property()
