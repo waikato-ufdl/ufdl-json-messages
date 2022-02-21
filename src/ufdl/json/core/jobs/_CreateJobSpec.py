@@ -18,8 +18,8 @@ class CreateJobSpec(StrictJSONObject['CreateJobSpec']):
     )
 
     # The values of the parameters
-    parameter_values: Dict[str, str] = MapProperty(
-        value_property=StringProperty(),
+    parameter_values: Dict[str, ValueTypePair] = MapProperty(
+        value_property=ValueTypePair.as_property(),
         optional=True
     )
 

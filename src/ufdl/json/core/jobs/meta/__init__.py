@@ -6,3 +6,4 @@ a workflow.
 from ._Dependency import Dependency
 from ._DependencyGraph import DependencyGraph
 from ._Node import Node
+from ._ParameterOverrideSpec import ParameterOverrideSpec

@@ -3,6 +3,8 @@ from typing import Dict
 from wai.json.object import StrictJSONObject
 from wai.json.object.property import StringProperty, NumberProperty, MapProperty
 
+from ._ParameterOverrideSpec import ParameterOverrideSpec
+
 
 class Node(StrictJSONObject['Node']):
     """
@@ -24,7 +26,7 @@ class Node(StrictJSONObject['Node']):
 
     # The values to use as default for this node's parameters, overriding
     # the defaults defined on the child template
-    parameter_default_overrides: Dict[str, str] = MapProperty(
-        value_property=StringProperty(),
+    parameter_default_overrides: Dict[str, ParameterOverrideSpec] = MapProperty(
+        value_property=ParameterOverrideSpec.as_property(),
         optional=True
     )

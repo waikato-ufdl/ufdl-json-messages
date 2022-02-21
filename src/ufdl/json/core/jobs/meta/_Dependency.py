@@ -1,8 +1,6 @@
 from wai.json.object import StrictJSONObject
 from wai.json.object.property import StringProperty
 
-from .._ValueTypePair import ValueTypePair
-
 
 class Dependency(StrictJSONObject['Dependency']):
     """
@@ -12,8 +10,8 @@ class Dependency(StrictJSONObject['Dependency']):
     # The child node that will be expected to produce the output
     from_node: str = StringProperty()
 
-    # The name and type of the output that will be expected
-    from_output: ValueTypePair = ValueTypePair.as_property()
+    # The output on the child node that will receive the value
+    from_output: str = StringProperty()
 
     # The child node that will receive the output's value as input
     to_node: str = StringProperty()
