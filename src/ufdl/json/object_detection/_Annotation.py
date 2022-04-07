@@ -1,12 +1,16 @@
+from typing import TypeVar
+
 from wai.json.object import StrictJSONObject
 from wai.json.object.property import NumberProperty, StringProperty
 
 from ._Polygon import Polygon
 
+SelfType = TypeVar("SelfType", bound='Annotation')
 
-class Annotation(StrictJSONObject['Annotation']):
+
+class Annotation(StrictJSONObject[SelfType]):
     """
-    Represents a single annotation in an image.
+    Base-class for annotations in images/videos.
     """
     # The bounding-box of the annotation
     x: int = NumberProperty(integer_only=True)
