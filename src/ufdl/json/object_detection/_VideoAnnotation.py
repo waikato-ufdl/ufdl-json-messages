@@ -21,3 +21,8 @@ class VideoAnnotation(Annotation['VideoAnnotation']):
             time=time,
             **image_annotation.to_raw_json(validate=False)
         )
+
+    def to_image_annotation(self) -> ImageAnnotation:
+        args = self.to_raw_json(validate=False)
+        del args['time']
+        return ImageAnnotation(**args)
