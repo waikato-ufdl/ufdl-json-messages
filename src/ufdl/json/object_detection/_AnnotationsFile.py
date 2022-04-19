@@ -15,5 +15,6 @@ class AnnotationsFile(JSONObject['AnnotationsFile']):
             sub_properties=(
                 Image.as_property(),
                 Video.as_property()
-            )
+            ),
+            optional=True
         )
